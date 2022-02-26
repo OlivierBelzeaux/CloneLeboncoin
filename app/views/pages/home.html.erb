@@ -1,2 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="px-4 pt-5 my-5 text-center">
+  <h1 class="display-4 fw-bold">Leboncoin clone</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">Dénichez où vendez vos affaires de secondes mains.</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+      <%= link_to "Créer une annonce", new_announcement_path, class: "btn btn-brand btn-lg px-4 me-sm-3" %>
+      <%= link_to "Voir les annonces", announcements_path, class: "btn btn-outline-secondary btn-lg px-4" %>
+    </div>
+  </div>
+</div>
+
+<div class="album py-5 bg-light">
+  <div class="container">
+  <h2 class="pb-2 mb-5 border-bottom">Top annonces</h2>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <% @announcements.first(6).find_all do |announcement| %>
+        <div class="col">
+          <%= render "shared/card", announcement: announcement %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
