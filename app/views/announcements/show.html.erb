@@ -1,0 +1,39 @@
+<div class="container my-5">
+  <div class="col-lg-8 border p-3 main-section bg-white">
+    <div class="row hedding m-0 pl-3 pt-0 pb-3">
+     <h1><%= @announcement.title %></h1>
+    </div>
+    <div class="row m-0">
+      <div class="col-lg-4 left-side-product-box pb-3">
+        <img src=<%= @announcement.url_photo %> alt=<%= @announcement.title %> class="border p-3">
+      </div>
+      <div class="col-lg-8">
+          <div class="right-side-pro-detail border p-3 m-0">
+            <div class="row">
+              <div class="col-lg-12">
+                  <p class="m-0 p-0 price-pro"><%= @announcement.price %> €</p>
+              </div>
+              <div class="col-lg-12 pt-2">
+                  <h5>Description</h5>
+                  <span><%= @announcement.description %></span>
+              </div>
+              <div class="col-lg-12 mt-3">
+                <div class="row">
+                    <div class="col-lg-6 pb-2">
+                        <a href="#" class="btn btn-brand w-100">Commandez</a>
+                    </div>
+                </div>
+                <% if user_signed_in? || current_user == @announcement.user_id %>
+                  <div class="row">
+                      <div class="col-lg-6 pb-2">
+                        <%= link_to "Mettre à jour l'annonce", edit_announcement_path(@announcement.id), class: 'btn btn-success w-100' %>
+                      </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

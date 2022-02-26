@@ -4,7 +4,7 @@
       <%= f.input :title %>
       <%= f.input :description %>
       <%= f.input :category, collection: Announcement::CATEGORIES, prompt: :translate %>
-      <%= f.input :price, as: :float %>
+      <%= f.input :price, as: :integer %>
       <%= f.input :url_photo %>
     </div>
     <div class="d-flex justify-content-center mt-5" id="btn_submit">

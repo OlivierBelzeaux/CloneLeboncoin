@@ -1,5 +1,6 @@
 class AnnouncementsController < ApplicationController
   before_action :set_announcement, only: %I[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %I[index show]
 
   def index
     @announcements = Announcement.all
@@ -13,7 +14,8 @@ class AnnouncementsController < ApplicationController
   end
 
   def create
-    @announcement = Announcement.new(set_announcement)
+    @announcement = Announcement.new(params_announcement)
+    @announcement.user = current_user
     if @announcement.save
       redirect_to announcement_path(@announcement.id)
     else
