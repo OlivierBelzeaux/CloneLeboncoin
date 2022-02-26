@@ -29,3 +29,9 @@ Et de mettre de côté la partie wishlist, messagerie.
   - email: olivier@gmail.com mdp: 123456
   - email: randja@gmail.com mdp: 123456
 Olivier possède 6 annonces, Randja aucune
+
+## Amélioration
+
+- Avec plus de temps les features à ajouter auraient été :
+  L'ajout d'image via Cloudinary par exemple
+  Une page spécifique aux annonces émises par un utilisateurs dédiée à leur gestion
