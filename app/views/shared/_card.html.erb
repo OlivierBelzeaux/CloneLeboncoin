@@ -1,0 +1,12 @@
+<div class="card shadow-sm">
+  <img src=<%= announcement.url_photo %> class="bd-placeholder-img card-img-top" alt=<%= announcement.title %> width="100%" height="225">
+
+  <div class="card-body">
+    <p class="card-text"><%= announcement.description %></p>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <%= link_to "Voir l'annonce", announcement_path(announcement), class: 'btn btn-brand' %>
+      </div>
+    </div>
+  </div>
+</div>
