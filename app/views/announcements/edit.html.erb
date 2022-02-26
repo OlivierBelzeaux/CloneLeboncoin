@@ -8,7 +8,8 @@
       <%= f.input :url_photo %>
     </div>
     <div class="d-flex justify-content-center mt-5" id="btn_submit">
-      <%= f.submit "Mettre à jour", class:'btn btn-brand'%>
+      <%= f.submit "Mettre à jour", class:'btn btn-brand mx-3'%>
+      <%= link_to "Supprimer l'annonce", announcement_path(@announcement.id), method: 'DELETE', class: 'btn btn-danger mx-3' %>
     </div>
   <% end %>
 </div>
