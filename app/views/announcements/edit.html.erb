@@ -1,0 +1,14 @@
+<div class="container my-5 form col-7">
+  <%= simple_form_for @announcement do |f| %>
+    <div class="form-inputs" m-3 >
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :category, collection: Announcement::CATEGORIES, prompt: :translate %>
+      <%= f.input :price, as: :float %>
+      <%= f.input :url_photo %>
+    </div>
+    <div class="d-flex justify-content-center mt-5" id="btn_submit">
+      <%= f.submit "Mettre à jour", class:'btn btn-brand'%>
+    </div>
+  <% end %>
+</div>
